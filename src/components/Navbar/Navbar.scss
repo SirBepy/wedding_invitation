@@ -135,7 +135,7 @@
   transition:
     opacity 0.3s,
     visibility 0.3s;
-  background-color: #d2c9ef;
+  background-color: var(--color-surface-alt);
 
   &--open {
     opacity: 1;

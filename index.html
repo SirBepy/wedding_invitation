@@ -14,12 +14,15 @@
     <meta property="og:title" content="Josip & Storm — Wedding Invitation">
     <meta property="og:description" content="Please join Josip &amp; Storm in celebrating their wedding on 12.09.2026">
     <meta property="og:image" content="http://josip-storm.love/favicon/web-app-manifest-512x512.png">
+    <meta property="og:url" content="https://sirbepy.github.io/wedding-invitation/">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Josip & Storm — Wedding Invitation">
     <meta name="twitter:description" content="Please join Josip &amp; Storm in celebrating their wedding on 12.09.2026">
     <meta name="twitter:image" content="http://josip-storm.love/favicon/web-app-manifest-512x512.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sirbepy/bepy-project-init@main/styleguide.css">
 
     <!-- Preconnect to Google Fonts CDN so the connection is ready early -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +45,8 @@
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
     <link rel="shortcut icon" href="favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#634981" />
 </head>
 
 <body>
@@ -51,8 +55,14 @@
         aria-hidden="true">.</span>
     <div id="app"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- Settings widget - comment out to disable -->
+    <script src="https://cdn.jsdelivr.net/gh/sirbepy/bepy-project-init@main/widget/settings.js"></script>
+    <!-- Animated background. To disable: set window.BEPY_BACKGROUND = false before this tag. To use a custom SVG: set window.BEPY_BG_PATTERN = 'your-pattern.svg' before this tag. -->
+    <script src="https://cdn.jsdelivr.net/gh/sirbepy/bepy-project-init@main/widget/background.js"></script>
     <script>
-
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("/sw.js");
+        }
     </script>
 </body>
 

@@ -1,0 +1,14 @@
+{
+  "title": "Wedding Invitation",
+  "shortDescription": "Interactive digital wedding invitation with animated envelope, RSVP system, and event details.",
+  "type": "Web",
+  "status": "in-progress",
+  "languages": ["JavaScript", "SCSS", "HTML"],
+  "frameworks": ["React"],
+  "tools": ["Vite", "Google Apps Script"],
+  "liveUrl": "https://sirbepy.github.io/wedding-invitation/",
+  "mainImage": "screenshot-1.png",
+  "images": ["screenshot-1.png", "screenshot-2.png", "screenshot-3.png"],
+  "year": 2026,
+  "impressiveness": 4
+}
