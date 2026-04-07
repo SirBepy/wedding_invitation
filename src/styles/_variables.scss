@@ -6,20 +6,3 @@ $color-primary-var3: #8a73a8;
 
 $breakpoint-mobile: 768px;
 $breakpoint-tablet: 1024px;
-
-// Override styleguide CSS vars with project palette
-:root {
-  --color-background: #{$color-bg};
-  --color-surface: #{lighten($color-bg, 3%)};
-  --color-surface-alt: #{darken($color-bg, 4%)};
-  --color-text: #{$color-primary};
-  --color-text-muted: #{$color-primary-var3};
-  --color-primary: #{$color-accent};
-  --color-secondary: #{$color-primary-var2};
-  --color-border: #{rgba($color-primary-var3, 0.3)};
-  --font-heading: "Angella White", cursive;
-  --font-body: "Noto Serif", serif;
-  --radius-card: 1rem;
-  --radius-badge: 0.5rem;
-  --shadow-card: 0 2px 12px #{rgba($color-primary, 0.1)};
-}
