@@ -5,21 +5,21 @@ const BASE = "";
 // const BASE = import.meta.env.BASE_URL;
 
 const timelineItems = [
-  { time: "14:00", icon: `${BASE}icons/sign.svg`, title: "Welcome<br/>Party" },
+  { time: "13:00", icon: `${BASE}icons/sign.svg`, title: "Welcome<br/>Party" },
   {
     time: "16:00",
     icon: `${BASE}icons/church.svg`,
     title: "Catholic<br/>Ceremony",
   },
-  {
-    time: "18:00",
-    icon: `${BASE}icons/drinks.svg`,
-    title: "Cocktail<br/>Hour",
-  },
+  // {
+  //   time: "18:00",
+  //   icon: `${BASE}icons/drinks.svg`,
+  //   title: "Drinks",
+  // },
   { time: "19:00", icon: `${BASE}icons/plate.svg`, title: "First Course" },
   { time: "19:30", icon: `${BASE}icons/disco.svg`, title: "Party" },
   {
-    time: "23:00",
+    time: "00:00",
     icon: `${BASE}icons/cake.svg`,
     title: "Desserts &<br/>Cake",
   },
@@ -40,8 +40,6 @@ export default function Timeline() {
       <div className="timeline-content">
         <h1>Wedding Timeline</h1>
 
-        {/* // TODO: Delete this later */}
-        <p className="temporary_description">Times to still be confirmed</p>
         <div className="timeline">
           {timelineItems.map((item) => (
             <div key={item.time} className="timeline__item">
