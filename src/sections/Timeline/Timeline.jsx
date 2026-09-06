@@ -11,15 +11,9 @@ const timelineItems = [
     icon: `${BASE}icons/church.svg`,
     title: "Catholic<br/>Ceremony",
   },
-  // {
-  //   time: "18:00",
-  //   icon: `${BASE}icons/drinks.svg`,
-  //   title: "Drinks",
-  // },
-  { time: "19:00", icon: `${BASE}icons/plate.svg`, title: "First Course" },
-  { time: "19:30", icon: `${BASE}icons/disco.svg`, title: "Party" },
+  { time: "18:00", icon: `${BASE}icons/drinks.svg`, title: "Venue Open" },
   {
-    time: "00:00",
+    time: "23:00",
     icon: `${BASE}icons/cake.svg`,
     title: "Desserts &<br/>Cake",
   },
