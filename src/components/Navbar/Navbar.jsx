@@ -2,10 +2,21 @@ import { useState, useEffect } from "react";
 import Button from "../Button/Button";
 import "./Navbar.scss";
 
-const SECTIONS = ["landing", "details", "timeline", "faqs", "rsvp"];
+const SECTIONS = [
+  "landing",
+  "info",
+  "seating",
+  "ceremony",
+  "timeline",
+  "details",
+  "faqs",
+  "rsvp",
+];
 
 const NAV_LINKS = [
-  { id: "details", label: "Details" },
+  { id: "info", label: "Info" },
+  { id: "seating", label: "Seating" },
+  { id: "ceremony", label: "Ceremony" },
   { id: "timeline", label: "Schedule" },
   { id: "faqs", label: "FAQs" },
 ];
@@ -58,9 +69,9 @@ export default function Navbar({ hidden = false }) {
           ))}
         </div>
         <Button
-          text="RSVP"
-          href="#rsvp"
-          classes={`navbar__cta font-text ${activeSection === "rsvp" ? "navbar__cta--active" : ""}`}
+          text="My Table"
+          href="#seating"
+          classes={`navbar__cta font-text ${activeSection === "seating" ? "navbar__cta--active" : ""}`}
         />
       </nav>
 
@@ -93,8 +104,8 @@ export default function Navbar({ hidden = false }) {
             ))}
           </div>
           <Button
-            text="RSVP"
-            href="#rsvp"
+            text="My Table"
+            href="#seating"
             classes="navbar-menu__cta font-text"
             onClick={closeMenu}
           />

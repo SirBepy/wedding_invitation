@@ -8,13 +8,15 @@ const GROUP_COUNT = 10;
 
 export default function Landing({
   reveal = false,
+  instant = false,
   preAnimateYoureInvited = false,
   onRevealDone,
 }) {
-  const [visibleCount, setVisibleCount] = useState(0);
+  // Deep links skip the stagger entirely: all groups start visible.
+  const [visibleCount, setVisibleCount] = useState(instant ? GROUP_COUNT : 0);
 
   useEffect(() => {
-    if (!reveal || visibleCount > 0) return;
+    if (instant || !reveal || visibleCount > 0) return;
 
     for (let i = 1; i <= GROUP_COUNT; i++) {
       setTimeout(() => {
@@ -61,8 +63,8 @@ export default function Landing({
             ]}
             link="https://maps.app.goo.gl/Niw21p7dzi6Ryziq9"
           />
-          <a href="#rsvp" className="font-text landing-rsvp">
-            RSVP by August 29th
+          <a href="#seating" className="font-text landing-rsvp">
+            Find your table
           </a>
         </div>
       </div>
