@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useId } from "react";
 import "./SearchField.scss";
 
 export default function SearchField({
@@ -12,6 +12,7 @@ export default function SearchField({
   const [isOpen, setIsOpen] = useState(false);
   const inputRef = useRef(null);
   const listRef = useRef(null);
+  const listId = useId();
 
   useEffect(() => {
     if (!query.trim()) {
@@ -67,6 +68,14 @@ export default function SearchField({
       <input
         ref={inputRef}
         type="text"
+        role="combobox"
+        aria-expanded={isOpen}
+        aria-controls={listId}
+        aria-autocomplete="list"
+        aria-activedescendant={
+          isOpen && selectedIndex >= 0 ? `${listId}-opt-${selectedIndex}` : undefined
+        }
+        aria-label={placeholder}
         className="search-field__input font-text"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
@@ -76,11 +85,14 @@ export default function SearchField({
         autoComplete="off"
       />
       {isOpen && (
-        <ul className="search-field__dropdown" ref={listRef}>
+        <ul className="search-field__dropdown" id={listId} role="listbox" ref={listRef}>
           {results.length > 0 ? (
             results.map((guest, i) => (
               <li
                 key={guest.rowNumber}
+                id={`${listId}-opt-${i}`}
+                role="option"
+                aria-selected={i === selectedIndex}
                 className={`search-field__item font-text ${i === selectedIndex ? "search-field__item--selected" : ""}`}
                 onMouseDown={() => handleSelect(guest)}
                 onMouseEnter={() => setSelectedIndex(i)}
@@ -89,7 +101,11 @@ export default function SearchField({
               </li>
             ))
           ) : (
-            <li className="search-field__item search-field__item--empty font-text">
+            <li
+              role="option"
+              aria-disabled="true"
+              className="search-field__item search-field__item--empty font-text"
+            >
               No results found
             </li>
           )}

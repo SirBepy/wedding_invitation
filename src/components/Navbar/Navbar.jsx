@@ -34,7 +34,9 @@ export default function Navbar({ hidden = false }) {
           }
         });
       },
-      { threshold: 0.4 },
+      // A percentage threshold never fires for a section taller than the viewport
+      // (e.g. #seating), so track a thin reading line instead of area coverage.
+      { root: null, rootMargin: "-45% 0px -50% 0px", threshold: 0 },
     );
 
     SECTIONS.forEach((id) => {

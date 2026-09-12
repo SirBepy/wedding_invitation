@@ -7,7 +7,8 @@ export default function Ceremony() {
       <div className="ceremony-content">
         <h1>The Ceremony</h1>
         <p className="font-text ceremony-subtitle">
-          Church of Saint James, Međugorje · 16:00
+          <span>Church of Saint James, Međugorje</span>
+          <span className="ceremony-subtitle__time">16:00</span>
         </p>
         <p className="font-text-2 ceremony-text">
           The wedding is a full Catholic Mass, about one hour. Open the

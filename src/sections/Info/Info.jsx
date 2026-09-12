@@ -1,17 +1,15 @@
 import LocationButton from "../../components/LocationButton/LocationButton";
 import "./Info.scss";
 
-const BASE = "";
-
 const places = [
   {
-    icon: `${BASE}icons/church.svg`,
+    icon: "icons/church.svg",
     title: "Ceremony",
     lines: ["Church of Saint James", "Međugorje", "16:00"],
     link: "https://maps.app.goo.gl/srK3JGs34MgFSgfi9",
   },
   {
-    icon: `${BASE}icons/drinks.svg`,
+    icon: "icons/drinks.svg",
     title: "Welcome Party & Reception",
     lines: [
       "Hotel Storia",
@@ -45,7 +43,12 @@ export default function Info() {
         <div className="info-places">
           {places.map((place) => (
             <div key={place.title} className="info-place">
-              <img className="info-place__icon" src={place.icon} alt="" />
+              <img
+                className="info-place__icon"
+                src={place.icon}
+                alt=""
+                loading="lazy"
+              />
               <span className="font-decorative2 info-place__title">
                 {place.title}
               </span>

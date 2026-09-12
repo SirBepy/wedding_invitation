@@ -39,16 +39,18 @@ export default function Seating() {
           placeholder="Search your name..."
         />
 
-        {selectedGuest && (
-          <div className="seating-result">
-            <p className="font-text seating-result__name">
-              {selectedGuest.name}
-            </p>
-            <p className="font-decorative1 seating-result__table">
-              Table {selectedGuest.table}
-            </p>
-          </div>
-        )}
+        <div className="seating-result" aria-live="polite">
+          {selectedGuest && (
+            <>
+              <p className="font-text seating-result__name">
+                {selectedGuest.name}
+              </p>
+              <p className="font-decorative1 seating-result__table">
+                Table {selectedGuest.table}
+              </p>
+            </>
+          )}
+        </div>
 
         <div className="seating-grid">
           {tables.map((table) => (

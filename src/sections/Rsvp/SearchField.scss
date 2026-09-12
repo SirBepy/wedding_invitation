@@ -6,13 +6,13 @@
 
   &__input {
     width: 100%;
+    min-height: 44px;
     padding: 0.8em 1em;
     font-size: 1rem;
     border: 2px solid $color-primary-var3;
     border-radius: 6px;
     background-color: #fff;
     color: $color-primary;
-    outline: none;
     letter-spacing: 0.1em;
     box-sizing: border-box;
 
@@ -22,6 +22,13 @@
 
     &:focus {
       border-color: $color-primary;
+    }
+
+    // Root font-size drops to 12px under 768px, so em-padding alone lands
+    // around 38px; the px floor above keeps the tap target at 44px.
+    &:focus-visible {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
     }
   }
 
@@ -43,6 +50,9 @@
   }
 
   &__item {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
     padding: 0.7em 1em;
     cursor: pointer;
     color: $color-primary;

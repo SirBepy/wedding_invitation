@@ -35,6 +35,12 @@
     align-items: center;
     gap: 0.2em;
 
+    // Announces the table number via aria-live, so the container is always
+    // in the DOM; collapse it to zero height when there's nothing to show.
+    &:empty {
+      display: none;
+    }
+
     &__name {
       font-size: 1.2rem;
       color: $color-primary;
@@ -90,13 +96,23 @@
     }
 
     &__guest {
-      font-size: 0.9rem;
+      font-size: 1.05rem;
       color: $color-primary;
       letter-spacing: 0;
 
+      @media (max-width: $breakpoint-mobile) {
+        font-size: 1.25rem;
+        line-height: 1.6;
+      }
+
+      // Bold + background wash so the match doesn't rely on colour alone.
       &--highlight {
         font-weight: bold;
-        color: $color-accent;
+        color: $color-primary;
+        background: rgba($color-accent, 0.14);
+        padding: 0.15em 0.5em;
+        margin: 0 -0.5em;
+        border-radius: 4px;
       }
     }
   }
