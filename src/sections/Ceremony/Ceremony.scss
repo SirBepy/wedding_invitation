@@ -1,0 +1,192 @@
+@use "../../styles/variables" as *;
+
+#ceremony {
+  .ceremony-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 50em;
+    // Taller than the viewport, so the section top is where a deep link
+    // lands: clear the fixed navbar or the title sits under it.
+    padding: 5em 2em 2em;
+  }
+
+  .ceremony-intro {
+    margin-top: 0.8em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: $color-primary-var3;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .ceremony-legend {
+    margin-top: 1em;
+    text-align: center;
+    color: $color-primary-var3;
+    font-size: 0.9rem;
+  }
+
+  .ceremony-legend__chip {
+    display: inline-block;
+    font-weight: bold;
+    color: $color-primary;
+    border-left: 3px solid $color-accent;
+    background: rgba($color-accent, 0.08);
+    padding: 0.1em 0.5em;
+    border-radius: 4px;
+  }
+
+  .ceremony-accordion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2em;
+  }
+
+  .ceremony-item {
+    border-bottom: 1px solid rgba($color-primary, 0.15);
+    padding: 1em 0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &--open {
+      .ceremony-item__arrow {
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  .ceremony-item__header {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    padding: 0;
+    text-align: left;
+    color: $color-primary;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .ceremony-item__label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+  }
+
+  .ceremony-item__part {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: $color-primary-var3;
+  }
+
+  .ceremony-item__title {
+    font-size: 1.2rem;
+    letter-spacing: 0.12em;
+    line-height: 1.5em;
+  }
+
+  .ceremony-item__arrow {
+    flex-shrink: 0;
+    display: inline-block;
+    width: 0.45em;
+    height: 0.45em;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.25s ease;
+    margin-bottom: 0.1em; // visual centering of the chevron shape
+  }
+
+  .ceremony-item__body {
+    margin-top: 1em;
+    letter-spacing: 0;
+    line-height: 1.55;
+
+    // main.scss gives every <p> 0.279em tracking directly, which beats the
+    // inherited 0 above; liturgy text needs to read at book density.
+    p {
+      letter-spacing: 0;
+    }
+  }
+
+  .ceremony-block {
+    margin-top: 0.8em;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .ceremony-block--heading {
+    font-weight: bold;
+    color: $color-accent;
+    margin-top: 1.4em;
+  }
+
+  .ceremony-block--rubric {
+    font-style: italic;
+    color: $color-primary-var3;
+    font-size: 0.95em;
+  }
+
+  .ceremony-block--priest {
+    color: $color-primary;
+  }
+
+  .ceremony-block--lines {
+    display: flex;
+    flex-direction: column;
+    color: $color-primary;
+  }
+
+  // The one style guests actually need to spot mid-Mass on a phone screen.
+  .ceremony-block--people {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: $color-primary;
+    border-left: 3px solid $color-accent;
+    background: rgba($color-accent, 0.08);
+    padding: 0.5em 0.8em;
+    border-radius: 4px;
+  }
+
+  .ceremony-line {
+    display: block;
+  }
+
+  .ceremony-note {
+    margin-top: 2em;
+    width: 100%;
+    color: $color-primary;
+    border-left: 3px solid $color-primary-var3;
+    background: rgba($color-primary-var3, 0.08);
+    padding: 0.8em 1em;
+    border-radius: 4px;
+    line-height: 1.55;
+  }
+
+  .ceremony-download {
+    margin-top: 1.5em;
+    font-weight: bold;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
