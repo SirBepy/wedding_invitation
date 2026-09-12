@@ -11,4 +11,10 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    rollupOptions: {
+      // Second HTML entry: the standalone seating page, built alongside the invitation.
+      input: { main: "index.html", seating: "seating.html" },
+    },
+  },
 });
