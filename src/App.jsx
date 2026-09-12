@@ -3,7 +3,6 @@ import Background from "./components/Background/Background";
 import Envelope from "./components/Envelope/Envelope";
 import Navbar from "./components/Navbar/Navbar";
 import Landing from "./sections/Landing/Landing";
-import Info from "./sections/Info/Info";
 import Ceremony from "./sections/Ceremony/Ceremony";
 import Details from "./sections/Details/Details";
 import Timeline from "./sections/Timeline/Timeline";
@@ -54,7 +53,6 @@ export default function App() {
         preAnimateYoureInvited={preAnimateYoureInvited}
         onRevealDone={() => setAppPhase("done")}
       />
-      <Info />
       <Ceremony />
       <Timeline />
       <Details />

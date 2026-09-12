@@ -22,10 +22,13 @@ const timelineItems = [
 
 const locations = [
   {
-    title: "All Other Events",
+    texts: ["Church of Saint James", "Međugorje"],
+    link: "https://maps.app.goo.gl/srK3JGs34MgFSgfi9",
+  },
+  {
+    texts: ["Hotel Storia", "Tasovčići bb, 88300"],
     link: "https://maps.app.goo.gl/Niw21p7dzi6Ryziq9",
   },
-  { title: "Church", link: "https://maps.app.goo.gl/srK3JGs34MgFSgfi9" },
 ];
 
 export default function Timeline() {
@@ -55,8 +58,8 @@ export default function Timeline() {
         <div className="timeline-locations">
           {locations.map((loc) => (
             <LocationButton
-              key={loc.title}
-              texts={[loc.title]}
+              key={loc.link}
+              texts={loc.texts}
               link={loc.link}
               layout="horizontal"
             />

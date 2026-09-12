@@ -4,7 +4,6 @@ import "./Navbar.scss";
 
 const SECTIONS = [
   "landing",
-  "info",
   "ceremony",
   "timeline",
   "details",
@@ -13,10 +12,10 @@ const SECTIONS = [
 ];
 
 const NAV_LINKS = [
-  { id: "info", label: "Info", href: "#info" },
   { id: "seating", label: "Seating", href: "seating.html" },
   { id: "ceremony", label: "Ceremony", href: "#ceremony" },
   { id: "timeline", label: "Schedule", href: "#timeline" },
+  { id: "details", label: "Details", href: "#details" },
   { id: "faqs", label: "FAQs", href: "#faqs" },
 ];
 
