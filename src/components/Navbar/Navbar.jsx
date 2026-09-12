@@ -52,7 +52,9 @@ export default function Navbar({ hidden = false }) {
 
   return (
     <>
-      <nav className={`navbar ${hidden ? "navbar--hidden" : ""}`}>
+      <nav
+        className={`navbar ${hidden ? "navbar--hidden" : ""} ${activeSection !== "landing" ? "navbar--scrolled" : ""}`}
+      >
         <a
           href="#landing"
           className={`navbar__logo font-decorative2 ${activeSection === "landing" ? "navbar__logo--active" : ""}`}
@@ -78,7 +80,7 @@ export default function Navbar({ hidden = false }) {
       </nav>
 
       <button
-        className={`navbar-burger ${hidden ? "navbar--hidden" : ""} ${menuOpen ? "navbar-burger--open" : ""}`}
+        className={`navbar-burger ${hidden ? "navbar--hidden" : ""} ${menuOpen ? "navbar-burger--open" : ""} ${activeSection !== "landing" ? "navbar-burger--scrolled" : ""}`}
         aria-label="Toggle menu"
         onClick={toggleMenu}
       >

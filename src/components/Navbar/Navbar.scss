@@ -10,7 +10,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 1em 2em;
-  transition: top 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition:
+    top 2s cubic-bezier(0.165, 0.84, 0.44, 1),
+    background-color 0.3s,
+    box-shadow 0.3s;
 
   &__logo {
     font-size: 1.5rem;
@@ -61,6 +64,14 @@
   &--hidden {
     top: -10em;
     pointer-events: none;
+  }
+
+  // Past the hero: soft backdrop so nav text stays legible over section content
+  &--scrolled {
+    background-color: rgba($color-bg, 0.88);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 1px 0 rgba($color-accent, 0.18);
   }
 }
 
