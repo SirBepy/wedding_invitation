@@ -5,7 +5,6 @@ import "./Navbar.scss";
 const SECTIONS = [
   "landing",
   "info",
-  "seating",
   "ceremony",
   "timeline",
   "details",
@@ -14,11 +13,11 @@ const SECTIONS = [
 ];
 
 const NAV_LINKS = [
-  { id: "info", label: "Info" },
-  { id: "seating", label: "Seating" },
-  { id: "ceremony", label: "Ceremony" },
-  { id: "timeline", label: "Schedule" },
-  { id: "faqs", label: "FAQs" },
+  { id: "info", label: "Info", href: "#info" },
+  { id: "seating", label: "Seating", href: "seating.html" },
+  { id: "ceremony", label: "Ceremony", href: "#ceremony" },
+  { id: "timeline", label: "Schedule", href: "#timeline" },
+  { id: "faqs", label: "FAQs", href: "#faqs" },
 ];
 
 export default function Navbar({ hidden = false }) {
@@ -34,8 +33,8 @@ export default function Navbar({ hidden = false }) {
           }
         });
       },
-      // A percentage threshold never fires for a section taller than the viewport
-      // (e.g. #seating), so track a thin reading line instead of area coverage.
+      // A percentage threshold never fires for a section taller than the viewport,
+      // so track a thin reading line instead of area coverage.
       { root: null, rootMargin: "-45% 0px -50% 0px", threshold: 0 },
     );
 
@@ -65,18 +64,14 @@ export default function Navbar({ hidden = false }) {
           {NAV_LINKS.map((link) => (
             <a
               key={link.id}
-              href={`#${link.id}`}
+              href={link.href}
               className={`navbar__link font-text ${activeSection === link.id ? "navbar__link--active" : ""}`}
             >
               {link.label}
             </a>
           ))}
         </div>
-        <Button
-          text="My Table"
-          href="#seating"
-          classes={`navbar__cta font-text ${activeSection === "seating" ? "navbar__cta--active" : ""}`}
-        />
+        <Button text="My Table" href="seating.html" classes="navbar__cta font-text" />
       </nav>
 
       <button
@@ -99,7 +94,7 @@ export default function Navbar({ hidden = false }) {
             {NAV_LINKS.map((link) => (
               <a
                 key={link.id}
-                href={`#${link.id}`}
+                href={link.href}
                 className="navbar-menu__link font-text"
                 onClick={closeMenu}
               >
@@ -109,7 +104,7 @@ export default function Navbar({ hidden = false }) {
           </div>
           <Button
             text="My Table"
-            href="#seating"
+            href="seating.html"
             classes="navbar-menu__cta font-text"
             onClick={closeMenu}
           />

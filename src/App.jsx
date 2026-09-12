@@ -4,7 +4,6 @@ import Envelope from "./components/Envelope/Envelope";
 import Navbar from "./components/Navbar/Navbar";
 import Landing from "./sections/Landing/Landing";
 import Info from "./sections/Info/Info";
-import Seating from "./sections/Seating/Seating";
 import Ceremony from "./sections/Ceremony/Ceremony";
 import Details from "./sections/Details/Details";
 import Timeline from "./sections/Timeline/Timeline";
@@ -18,7 +17,7 @@ import "./build-info";
 // "revealing" — Envelope unmounted. Landing content stagger begins.
 // "done"      — Landing stagger complete. Navbar appears.
 
-// A deep link (e.g. shared #seating link) should land directly on its section,
+// A deep link (e.g. shared #faqs link) should land directly on its section,
 // not replay the envelope intro. Captured at import time: main.jsx strips the
 // hash from the URL right after importing this module, so it is gone by mount.
 const deepLinkId = window.location.hash.slice(1);
@@ -56,7 +55,6 @@ export default function App() {
         onRevealDone={() => setAppPhase("done")}
       />
       <Info />
-      <Seating />
       <Ceremony />
       <Timeline />
       <Details />

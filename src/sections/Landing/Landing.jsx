@@ -63,7 +63,7 @@ export default function Landing({
             ]}
             link="https://maps.app.goo.gl/Niw21p7dzi6Ryziq9"
           />
-          <a href="#seating" className="font-text landing-rsvp">
+          <a href="seating.html" className="font-text landing-rsvp">
             Find your table
           </a>
         </div>
